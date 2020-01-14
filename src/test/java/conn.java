@@ -24,7 +24,6 @@ public class conn {
         //driver.manage().window().fullscreen();
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
     }
 
     @Test
@@ -45,30 +44,14 @@ public class conn {
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='voir le mois précedent'])[2]/following::span[1]")).click();
         driver.findElement(By.id("train-launch-d-24-01-2020")).click();
 
-
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Horaires seuls'])[1]/following::span[1]")).click();
-        //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        try {
-            assertEquals("Départ De\n" + "Nantes (toutes Gares)", driver.findElement(By.xpath("/html/body/div[1]/div[6]/main/section/div/div[1]/div/div[1]/div[1]/div[1]/div/div[2]/span/p/span[1]")).getText());
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        try {
-            assertEquals("À Destination De\n" + "Paris (toutes Gares Intramuros)", driver.findElement(By.xpath("//*[@id=\"vsd-header-summary\"]/div[1]/div/div[2]/span/p/span[3]")).getText());
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
-        try {
-            assertEquals("ven. 24 janv.", driver.findElement(By.xpath("/html/body/div[1]/div[6]/main/section/div/div[3]/div/div[1]/div/ul/li[2]/div[2]/div/div[1]")).getText());
-        } catch (Error e) {
-            verificationErrors.append(e.toString());
-        }
+
     }
 
 
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+        //driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
