@@ -27,6 +27,7 @@ public class Test23 {
         driver.findElement(By.linkText("Marques")).click();
         driver.findElement(By.linkText("ACIS")).click();
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Objets de la Galerie'])[1]/following::h3[1]")).click();
+        System.out.print("bonjour");
     }
 
     @After
