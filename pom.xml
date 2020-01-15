@@ -22,7 +22,7 @@
                 <configuration>
                     <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
                     <includes>
-                        <include>*.java</include>
+                        <include>Calendrier.java</include>
                     </includes>
                 </configuration>
             </plugin>
